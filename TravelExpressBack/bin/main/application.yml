@@ -1,4 +1,5 @@
 travelexpress:
   mongodb:
-    host: www.pantry.ovh
+    #host: www.pantry.ovh
+    host: localhost
     port: 27017
