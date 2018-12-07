@@ -3,14 +3,17 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
-
+import {MenubarModule} from 'primeng/menubar';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    MenubarModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
