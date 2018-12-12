@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component,ViewEncapsulation } from '@angular/core';
 import {MenubarModule} from 'primeng/menubar';
-import {MenuItem} from 'primeng/api';
+import {MenuItem} from 'primeng/api';   
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class AppComponent {
   items: MenuItem[];
@@ -23,7 +24,15 @@ export class AppComponent {
           label: 'Bateau',
           icon: 'fa fa-ship',
           
-      }
+      },
+    {
+        label: 'Train',
+        icon: 'fa fa-train',
+    },
+    {
+        label: 'Bus',
+        icon: 'fa fa-bus',
+    }
   ];
 }
 }

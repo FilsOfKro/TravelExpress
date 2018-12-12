@@ -1,0 +1,15 @@
+.ui-menubar{
+    border: 1px solid #5b6369 !important;
+    background: #1a374d  !important;
+    color: #ffffff !important;
+    font-weight: bolder !important;
+}
+.ui-button{
+    background-color: #1a374d;  
+}
+.ui-corner-all {
+    border-radius: 0px;
+}
+.ui-menuitem:hover{
+    background-color: bisque;
+}
