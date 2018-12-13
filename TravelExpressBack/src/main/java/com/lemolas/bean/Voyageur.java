@@ -34,7 +34,6 @@ public class Voyageur {
 	 * Default constructor for JPA
 	 */
 	public Voyageur() {
-		System.out.println("???");
 	}
 
 	public Voyageur(String name, String surname, Date birthdate, String passportNumber) {

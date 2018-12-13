@@ -5,6 +5,7 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
 import java.sql.Date;
+import java.util.List;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -38,9 +39,9 @@ public class VoyageurRepositoryTest {
 	@Test
 	public void testFetchData() {
 		/* Test data retrieval */
-		Voyageur v1 = voyageurRepository.findVoyageurByName("Bob");
+		List<Voyageur> v1 = voyageurRepository.findVoyageurByName("Bob");
 		assertNotNull(v1);
-		assertEquals("9", v1.getPassportNumber());
+		assertEquals("9", v1.get(0).getPassportNumber());
 		/* Get all products, list should only have two */
 		Iterable<Voyageur> voyageurs = voyageurRepository.findAll();
 		for (Voyageur v : voyageurs) {

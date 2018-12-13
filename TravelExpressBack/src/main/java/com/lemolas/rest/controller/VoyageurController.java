@@ -30,7 +30,7 @@ public class VoyageurController {
 
 	@GetMapping
 	public List<Voyageur> getAllVoyageurs() {
-		System.out.println(repository.findVoyageurByName("Baron"));
+		repository.findVoyageurByName("Baron").forEach(v -> System.out.println(v));
 		Iterable<Voyageur> voyageurs = repository.findAll();
 
 		List<Voyageur> list = new ArrayList<>();
