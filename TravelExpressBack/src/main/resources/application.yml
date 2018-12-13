@@ -1,5 +1,12 @@
-travelexpress:
-  mongodb:
-    #host: www.pantry.ovh
-    host: localhost
-    port: 27017
+spring:
+  profiles:
+    active: DEV
+  datasource:
+    url: jdbc:mariadb://www.pantry.ovh:3306/TravelExpress
+    username: back
+    password: fast
+    driver-class-name: org.mariadb.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    open-in-view: false
