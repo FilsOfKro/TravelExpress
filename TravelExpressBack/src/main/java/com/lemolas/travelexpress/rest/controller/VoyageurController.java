@@ -1,4 +1,4 @@
-package com.lemolas.rest.controller;
+package com.lemolas.travelexpress.rest.controller;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.lemolas.bean.Voyageur;
-import com.lemolas.repositories.VoyageurRepository;
+import com.lemolas.travelexpress.bean.Voyageur;
+import com.lemolas.travelexpress.repositories.VoyageurRepository;
 
 @Component
 @RestController

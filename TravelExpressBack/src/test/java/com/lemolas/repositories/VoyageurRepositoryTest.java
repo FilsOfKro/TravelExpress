@@ -14,7 +14,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.lemolas.bean.Voyageur;
+import com.lemolas.travelexpress.bean.Voyageur;
+import com.lemolas.travelexpress.repositories.VoyageurRepository;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest

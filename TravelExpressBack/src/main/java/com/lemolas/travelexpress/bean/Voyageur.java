@@ -1,33 +1,25 @@
-package com.lemolas.bean;
+package com.lemolas.travelexpress.bean;
 
 import java.sql.Date;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
 
 @Entity
-@Table(name = "Voyageur")
 public class Voyageur {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "id")
 	private Integer id;
 
-	@Column(name = "name")
 	private String name;
 
-	@Column(name = "surname")
 	private String surname;
 
-	@Column(name = "birthdate")
 	private Date birthdate;
 
-	@Column(name = "passportNumber")
 	private String passportNumber;
 
 	/**

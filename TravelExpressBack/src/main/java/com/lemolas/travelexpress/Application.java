@@ -1,4 +1,4 @@
-package com.lemolas;
+package com.lemolas.travelexpress;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
