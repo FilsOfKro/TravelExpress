@@ -3,13 +3,25 @@
     background: #1a374d  !important;
     color: #ffffff !important;
     font-weight: bolder !important;
+    border:0px;
+    padding:0px;
 }
 .ui-button{
     background-color: #1a374d;  
 }
 .ui-corner-all {
     border-radius: 0px;
+}   
+.ui-menuitem{
+    border:0px;
+    padding:5px;
 }
-.ui-menuitem:hover{
-    background-color: bisque;
+.ui-menuitem-text{
+    color:white;
+
+}
+
+.ui-menuitem-icon{
+    color:white;
+
 }
