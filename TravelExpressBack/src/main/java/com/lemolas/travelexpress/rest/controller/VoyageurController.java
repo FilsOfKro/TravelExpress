@@ -3,6 +3,8 @@ package com.lemolas.travelexpress.rest.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,7 +33,7 @@ public class VoyageurController {
 
 	@GetMapping
 	@Cacheable(value = "defaultCache")
-	public List<Voyageur> getAllVoyageurs() {
+	public @Valid List<Voyageur> getAllVoyageurs() {
 		long start = System.currentTimeMillis();
 		Iterable<Voyageur> voyageurs = repository.findAll();
 
