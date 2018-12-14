@@ -6,6 +6,7 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,12 +30,15 @@ public class VoyageurController {
 	}
 
 	@GetMapping
+	@Cacheable(value = "defaultCache")
 	public List<Voyageur> getAllVoyageurs() {
-		repository.findVoyageurByName("Baron").forEach(v -> System.out.println(v));
+		long start = System.currentTimeMillis();
 		Iterable<Voyageur> voyageurs = repository.findAll();
 
 		List<Voyageur> list = new ArrayList<>();
 		voyageurs.forEach(v -> list.add(v));
+
+		log.warn("Ended in : " + (System.currentTimeMillis() - start) + "ms");
 
 		return list;
 	}

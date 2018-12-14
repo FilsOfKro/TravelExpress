@@ -1,5 +1,6 @@
 package com.lemolas.travelexpress.bean;
 
+import java.io.Serializable;
 import java.sql.Date;
 
 import javax.persistence.Entity;
@@ -8,7 +9,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Voyageur {
+public class Voyageur implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -236620864197817171L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

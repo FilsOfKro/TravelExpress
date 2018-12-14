@@ -28,6 +28,7 @@ dependencies {
   implementation('org.springframework.boot:spring-boot-starter-cache')
   implementation('org.springframework.boot:spring-boot-starter-data-jpa')
   implementation('org.springframework.boot:spring-boot-starter-web')
+  implementation('org.hibernate:hibernate-ehcache:5.2.2.Final')
   implementation('org.mariadb.jdbc:mariadb-java-client:1.5.7')
   implementation('javax.validation:validation-api:2.0.1.Final')
   testImplementation('org.springframework.boot:spring-boot-starter-test')
