@@ -2,7 +2,7 @@
   <p-header>
       Descendre pour en charger plus
   </p-header>
-  <ng-template  >
+  <ng-template let-voyages pTemplate="item" >
       <div class="ui-g ">
           <div class="ui-g-12 ui-md-3">
               <img src="assets/tuktuk2000.jpg">
@@ -10,68 +10,20 @@
           <div class="ui-g-12 ui-md-9">
               <div class="ui-g">
                   <div class="ui-g-2 ui-sm-6">Départ: </div>
-                  <div class="ui-g-10 ui-sm-6">lieux depart</div>
-                  <div class="ui-g-10 ui-sm-6">date depart</div>
+                  <div class="ui-g-10 ui-sm-6">{{voyages.dateDepart}}</div>
+                  <div class="ui-g-10 ui-sm-6">{{voyages.lieuDepart}}</div>
 
 
                   <div class="ui-g-2 ui-sm-6">Arrivée: </div>
-                  <div class="ui-g-10 ui-sm-6">lieux arrivee</div>
-                  <div class="ui-g-10 ui-sm-6">date depart</div>
+                  <div class="ui-g-10 ui-sm-6">{{voyages.dateArrive}}</div>
+                  <div class="ui-g-10 ui-sm-6">{{voyages.lieuArrive}}</div>
 
                   <div class="ui-g-2 ui-sm-6">Moyen de locomotion: </div>
-                  <div class="ui-g-10 ui-sm-6">avion, voiture, bateau, train</div>
+                  <div class="ui-g-10 ui-sm-6">{{voyages.locomotion}}</div>
 
               </div>
           </div>
       </div>
       
   </ng-template>
-  <ng-template >
-    <div class="ui-g ">
-        <div class="ui-g-12 ui-md-3">
-            <img src="assets/tuktuk2000.jpg">
-        </div>
-        <div class="ui-g-12 ui-md-9">
-            <div class="ui-g">
-                <div class="ui-g-2 ui-sm-6">Départ: </div>
-                <div class="ui-g-10 ui-sm-6">lieux depart</div>
-                <div class="ui-g-10 ui-sm-6">date depart</div>
-
-
-                <div class="ui-g-2 ui-sm-6">Arrivée: </div>
-                <div class="ui-g-10 ui-sm-6">lieux arrivee</div>
-                <div class="ui-g-10 ui-sm-6">date depart</div>
-
-                <div class="ui-g-2 ui-sm-6">Moyen de locomotion: </div>
-                <div class="ui-g-10 ui-sm-6">avion, voiture, bateau, train</div>
-
-            </div>
-        </div>
-    </div>
-    
-</ng-template>
-<ng-template >
-  <div class="ui-g ">
-      <div class="ui-g-12 ui-md-3">
-          <img src="assets/tuktuk2000.jpg">
-      </div>
-      <div class="ui-g-12 ui-md-9">
-          <div class="ui-g">
-              <div class="ui-g-2 ui-sm-6">Départ: </div>
-              <div class="ui-g-10 ui-sm-6">lieux depart</div>
-              <div class="ui-g-10 ui-sm-6">date depart</div>
-
-
-              <div class="ui-g-2 ui-sm-6">Arrivée: </div>
-              <div class="ui-g-10 ui-sm-6">lieux arrivee</div>
-              <div class="ui-g-10 ui-sm-6">date depart</div>
-
-              <div class="ui-g-2 ui-sm-6">Moyen de locomotion: </div>
-              <div class="ui-g-10 ui-sm-6">avion, voiture, bateau, train</div>
-
-          </div>
-      </div>
-  </div>
-  
-</ng-template>
 </p-dataScroller>
