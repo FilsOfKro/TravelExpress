@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 @Entity
@@ -37,6 +38,7 @@ public class Voyageur implements Serializable {
 
 	@NotNull
 	@Size(min = 9, max = 9)
+	@Pattern(regexp = "^[0-9]{2}[A-Z]{2}[0-9]{5}$")
 	private String passportNumber;
 
 	/**
