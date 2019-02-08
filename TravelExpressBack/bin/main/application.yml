@@ -3,7 +3,11 @@ travelexpress:
       host: www.pantry.ovh
       port: 3306
       name: TravelExpress
-
+   flight:
+     api:
+       url: https://aviation-edge.com/v2/public/
+       key: 3f1d6d-f1f426
+       
 spring:
   profiles:
     active: DEV
