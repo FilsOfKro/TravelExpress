@@ -7,24 +7,19 @@ import static org.junit.Assert.assertNull;
 import java.sql.Date;
 import java.util.List;
 
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
 
 import com.lemolas.travelexpress.bean.Voyageur;
 import com.lemolas.travelexpress.repositories.VoyageurRepository;
 
-@RunWith(SpringRunner.class)
-@SpringBootTest
+//@RunWith(SpringRunner.class)
+//@SpringBootTest
 public class VoyageurRepositoryTest {
 
 	@Autowired
 	private VoyageurRepository voyageurRepository;
 
-	@Before
+	// @Before
 	public void setUp() throws Exception {
 		Voyageur v1 = new Voyageur("Alice", "oui", new Date(0), "42");
 		Voyageur v2 = new Voyageur("Bob", "Le bricoleur", new Date(0), "9");
@@ -37,7 +32,7 @@ public class VoyageurRepositoryTest {
 		assertNotNull(v2.getId());
 	}
 
-	@Test
+	// @Test
 	public void testFetchData() {
 		/* Test data retrieval */
 		List<Voyageur> v1 = voyageurRepository.findVoyageurByName("Bob");

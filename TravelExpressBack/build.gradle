@@ -24,6 +24,11 @@ repositories {
   mavenCentral()
 }
 
+bootJar {
+    manifest {
+    attributes 'Start-Class': 'com.lemolas.travelexpress.Application'
+    }
+}
 
 dependencies {
   implementation('org.springframework.boot:spring-boot-starter-cache')
