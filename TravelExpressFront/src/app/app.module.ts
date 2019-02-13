@@ -8,15 +8,6 @@ import {MenubarModule} from 'primeng/menubar';
 import {ButtonModule} from 'primeng/button';
 import {DataScrollerModule} from 'primeng/datascroller';
 
-import { environment } from '../environments/environment';
-import {APP_BASE_HREF} from '@angular/common';
-
-let path = '/';
-
-if (environment.production) {
-  path = '/travelExpress';
-}
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +19,7 @@ if (environment.production) {
     ButtonModule,
     DataScrollerModule
   ],
-  providers: [{provide: APP_BASE_HREF, useValue: path}],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
