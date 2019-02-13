@@ -1,5 +1,7 @@
 package com.lemolas.travelexpress.rest.controller;
 
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,13 +44,14 @@ public class RoutesController {
 		String finalUrl = apiUrl + apiPath
 				+ "?key={key}&departureIcao={departureAirportId}&arrivalIcao={departureAirportId}";
 
-		log.info("About to call {} with apiKey {} and departure {} and arrival ", finalUrl, apiKey,
+		log.info("About to call {} with apiKey {} and departure {} and arrival {}", finalUrl, apiKey,
 				request.getDepartureAirportId(), request.getArrivalAirportId());
 
-		RoutesResponse response = restTemplate.getForObject(finalUrl, RoutesResponse.class, apiKey,
-				request.getDepartureAirportId(), request.getArrivalAirportId());
+		@SuppressWarnings("unchecked")
+		RoutesResponse response = new RoutesResponse(restTemplate.getForObject(finalUrl, List.class, apiKey,
+				request.getDepartureAirportId(), request.getArrivalAirportId()));
 
-		if (response == null) {
+		if (response.getRoutes() == null) {
 			return ResponseEntity.notFound().build();
 		}
 
