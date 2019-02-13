@@ -16,13 +16,13 @@ import com.lemolas.travelexpress.api.model.autocomplete.AutocompleteRequest;
 import com.lemolas.travelexpress.api.model.autocomplete.AutocompleteResponse;
 
 @RestController
-@RequestMapping("/autocomplete")
+@RequestMapping(AutocompleteController.apiPath)
 @Component
 public class AutocompleteController {
 
 	private Logger log = LoggerFactory.getLogger(AutocompleteController.class);
 
-	private static final String apiPath = "autocomplete";
+	protected static final String apiPath = "autocomplete";
 
 	private RestTemplate restTemplate;
 
