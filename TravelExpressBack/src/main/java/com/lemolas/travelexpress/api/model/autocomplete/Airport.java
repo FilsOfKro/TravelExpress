@@ -7,19 +7,19 @@ public class Airport {
 
 	private String name;
 
-	private String icao;
+	private String id;
 
 	@JsonCreator
-	public Airport(@JsonProperty("nameAirport") String name, @JsonProperty("codeIcaoAirport") String icao) {
+	public Airport(@JsonProperty("nameAirport") String name, @JsonProperty("codeIcaoAirport") String id) {
 		this.name = name;
-		this.icao = icao;
+		this.id = id;
 	}
 
 	public String getName() {
 		return this.name;
 	}
 
-	public String getIcao() {
-		return this.icao;
+	public String getId() {
+		return this.id;
 	}
 }

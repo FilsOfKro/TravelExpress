@@ -14,7 +14,7 @@ public class AutocompleteResponse {
 
 	@JsonCreator
 	public AutocompleteResponse(@JsonProperty("airportsByCities") List<Airport> airports) {
-		this.airports = airports.stream().filter(a -> !StringUtils.isEmpty(a.getIcao())).collect(Collectors.toList());
+		this.airports = airports.stream().filter(a -> !StringUtils.isEmpty(a.getId())).collect(Collectors.toList());
 	}
 
 	public List<Airport> getAirports() {
