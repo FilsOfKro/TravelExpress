@@ -6,7 +6,7 @@ travelexpress:
    flight:
      api:
        url: https://aviation-edge.com/v2/public/
-       key: 3f1d6d-f1f426
+       key: 503074-e19eb2
        
 spring:
   profiles:

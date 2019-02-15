@@ -1,9 +1,15 @@
 package com.lemolas.travelexpress.api.model.routes;
 
+import java.io.Serializable;
+
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class Route {
+public class Route implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3972296754209723063L;
 	private String departureIata;
 	private String departureIcao;
 	private String departureTerminal;
@@ -16,13 +22,17 @@ public class Route {
 	private String airlineIcao;
 	private String flightNumber;
 	private String regNumber;
+	private Double distance;
 
 	@JsonCreator
-	public Route(@JsonProperty String departureIata, @JsonProperty String departureIcao,
-			@JsonProperty String departureTerminal, @JsonProperty String departureTime,
-			@JsonProperty String arrivalIata, @JsonProperty String arrivalIcao, @JsonProperty String arrivalTerminal,
-			@JsonProperty String arrivalTime, @JsonProperty String airlineIata, @JsonProperty String airlineIcao,
-			@JsonProperty String flightNumber, @JsonProperty String regNumber) {
+	public Route(@JsonProperty("departureIata") String departureIata,
+			@JsonProperty("departureIcao") String departureIcao,
+			@JsonProperty("departureTerminal") String departureTerminal,
+			@JsonProperty("departureTime") String departureTime, @JsonProperty("arrivalIata") String arrivalIata,
+			@JsonProperty("arrivalIcao") String arrivalIcao, @JsonProperty("arrivalTerminal") String arrivalTerminal,
+			@JsonProperty("arrivalTime") String arrivalTime, @JsonProperty("airlineIata") String airlineIata,
+			@JsonProperty("airlineIcao") String airlineIcao, @JsonProperty("flightNumber") String flightNumber,
+			@JsonProperty("regNumber") String regNumber) {
 		this.departureIata = departureIata;
 		this.departureIcao = departureIcao;
 		this.departureTerminal = departureTerminal;
@@ -83,5 +93,13 @@ public class Route {
 
 	public String getRegNumber() {
 		return regNumber;
+	}
+
+	public Double getDistance() {
+		return distance;
+	}
+
+	public void setDistance(Double distance) {
+		this.distance = distance;
 	}
 }

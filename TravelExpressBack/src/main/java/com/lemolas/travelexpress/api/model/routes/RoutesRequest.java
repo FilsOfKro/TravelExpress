@@ -1,10 +1,16 @@
 package com.lemolas.travelexpress.api.model.routes;
 
+import java.io.Serializable;
+
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class RoutesRequest {
+public class RoutesRequest implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -1643852702094319761L;
 	private String departureAirportId;
 	private String arrivalAirportId;
 

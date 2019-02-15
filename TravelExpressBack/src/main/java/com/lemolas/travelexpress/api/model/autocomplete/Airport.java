@@ -1,9 +1,16 @@
 package com.lemolas.travelexpress.api.model.autocomplete;
 
+import java.io.Serializable;
+
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class Airport {
+public class Airport implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1594381393658740293L;
 
 	private String name;
 
