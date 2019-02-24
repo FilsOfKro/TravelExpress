@@ -1,7 +1,6 @@
 travelexpress:
    db:
-    #  host: www.pantry.ovh
-      host: localhost
+      host: www.pantry.ovh
       port: 3306
       name: TravelExpress
    flight:
@@ -14,10 +13,8 @@ spring:
     active: DEV
   datasource:
     url: jdbc:mariadb://${travelexpress.db.host}:${travelexpress.db.port}/${travelexpress.db.name}
-    #username: back
-    #password: fast
-    username: root
-    password: root
+    username: back
+    password: fast
     driver-class-name: org.mariadb.jdbc.Driver
   jpa:
     hibernate:
