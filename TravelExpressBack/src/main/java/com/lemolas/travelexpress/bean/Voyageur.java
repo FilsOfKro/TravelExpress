@@ -38,7 +38,7 @@ public class Voyageur implements Serializable {
 
 	@NotNull
 	@Size(min = 9, max = 9)
-	@Pattern(regexp = "^[0-9]{2}[A-Z]{2}[0-9]{5}$")
+	@Pattern(regexp = "^[A-Z]{2}[0-9]{2}[A-Z]{2}[0-9]{1}[A-Z]{2}$")
 	private String passportNumber;
 
 	/**
