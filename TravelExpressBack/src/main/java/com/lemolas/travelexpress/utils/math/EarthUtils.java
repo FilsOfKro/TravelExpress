@@ -1,5 +1,6 @@
 package com.lemolas.travelexpress.utils.math;
 
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -7,6 +8,7 @@ public class EarthUtils {
 
 	public static final Integer EARTH_RADIUS = 6371;
 
+	@Cacheable(value = "defaultCache")
 	public Double computeDistance(double latA, double lonA, double latB, double lonB) {
 
 		double latAR = Math.toRadians(latA);
@@ -19,6 +21,5 @@ public class EarthUtils {
 				* EARTH_RADIUS;
 
 		return distance;
-
 	}
 }

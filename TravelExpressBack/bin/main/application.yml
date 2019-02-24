@@ -1,20 +1,23 @@
 travelexpress:
    db:
-      host: www.pantry.ovh
+    #  host: www.pantry.ovh
+      host: localhost
       port: 3306
       name: TravelExpress
    flight:
      api:
        url: https://aviation-edge.com/v2/public/
-       key: 503074-e19eb2
+       key: 96fc50-65ee62
        
 spring:
   profiles:
     active: DEV
   datasource:
     url: jdbc:mariadb://${travelexpress.db.host}:${travelexpress.db.port}/${travelexpress.db.name}
-    username: back
-    password: fast
+    #username: back
+    #password: fast
+    username: root
+    password: root
     driver-class-name: org.mariadb.jdbc.Driver
   jpa:
     hibernate:
