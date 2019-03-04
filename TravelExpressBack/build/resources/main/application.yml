@@ -6,7 +6,7 @@ travelexpress:
    flight:
      api:
        url: https://aviation-edge.com/v2/public/
-       key: 503074-e19eb2
+       key: 96fc50-65ee62
        
 spring:
   profiles:
@@ -18,9 +18,11 @@ spring:
     driver-class-name: org.mariadb.jdbc.Driver
   jpa:
     hibernate:
+      show_sql: true
       naming:
         implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      use-new-id-generator-mappings: false
     open-in-view: false
 
 hibernate:

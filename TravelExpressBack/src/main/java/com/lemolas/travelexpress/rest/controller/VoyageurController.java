@@ -52,7 +52,7 @@ public class VoyageurController {
 	}
 
 	@PostMapping
-	public Voyageur createVoyage(@Valid @RequestBody Voyageur voyageur) {
+	public Voyageur createVoyageur(@Valid @RequestBody Voyageur voyageur) {
 		return repository.save(voyageur);
 	}
 
