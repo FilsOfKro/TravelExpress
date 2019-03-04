@@ -25,4 +25,35 @@ public class AutocompleteResponse implements Serializable {
 	public List<Airport> getAirports() {
 		return this.airports;
 	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((airports == null) ? 0 : airports.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (obj == null) {
+			return false;
+		}
+		if (!(obj instanceof AutocompleteResponse)) {
+			return false;
+		}
+		AutocompleteResponse other = (AutocompleteResponse) obj;
+		if (airports == null) {
+			if (other.airports != null) {
+				return false;
+			}
+		} else if (!airports.equals(other.airports)) {
+			return false;
+		}
+		return true;
+	}
+
 }
