@@ -1,0 +1,14 @@
+<h1>Votre panier</h1>
+<div>
+  <p-dataScroller [value]="voyages" [rows]="20" [loader]="loadButton">
+    <ng-template let-voyages pTemplate="item">
+      <app-panier-ligne [voyage]="voyages"></app-panier-ligne>
+    </ng-template>
+  </p-dataScroller>
+</div>
+<div style="background:honeydew">
+  <a>Prix total : {{fullPrize}}</a>
+  <div class="form-group">
+      <p-button (onClick)="pay()" label="Payer"></p-button>
+  </div>
+</div>

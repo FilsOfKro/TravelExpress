@@ -1,4 +1,13 @@
-<p-menubar [model]="items">
-        <button pButton label="Logout" icon="fa fa-sign-out"></button>
-</p-menubar>
-<app-list-all-voyages></app-list-all-voyages>
+<nav>
+        <a routerLink="/flight">Vols</a>
+        <a routerLink="/search">Rechercher</a>
+        <a routerLink="/basket">Panier</a>
+        <a routerLink="/login">Login</a>
+</nav>
+<div>
+        <!-- faire focntionner le css des fesses-->
+        <div style="width: 60%;margin-left: 20%;margin-right: 20%">
+                <router-outlet></router-outlet>
+        </div>
+
+</div>

@@ -1,0 +1,37 @@
+<div class="ui-g ">
+          
+    
+    <div class="ui-g-12 ui-md-9">
+
+        <div class="ui-g">
+            <table>
+              <tr>
+                <th>Départ : </th>
+                <th>Arrivée : </th>
+                <th>Detail du vol : </th>
+              </tr>
+              <tr>
+                  <td>{{voyage.departureIcao}}</td>
+                  <td>{{voyage.arrivalIcao}}</td>
+                  <td>{{voyage.airlineIcao}}</td>
+              </tr>
+              <tr>
+                <td>{{voyage.departureTime}}</td>
+                <td>{{voyage.arrivalTime}}</td>
+                <td>{{voyage.flightNumber}}</td>
+              </tr>
+              <tr>
+                <td>
+                    <div class="form-group">
+                        <p-button (onClick)="addToCart()" label="Ajouter au panier"></p-button>
+                    </div>
+                    <div class="form-group">
+                        <p-button (onClick)="showVoyage()" label="Détail"></p-button>
+                    </div>
+                </td>
+              </tr>
+            </table>
+
+        </div>
+    </div>
+</div>
