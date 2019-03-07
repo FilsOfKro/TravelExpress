@@ -41,6 +41,6 @@ public class AutocompleteController {
 					.body("Impossible d'obtenir les données d'autocomplétion pour les paramètres renseignés.");
 		}
 
-		return ResponseEntity.ok(response);
+		return ResponseEntity.ok(response.getAirports());
 	}
 }
