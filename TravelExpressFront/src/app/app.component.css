@@ -1,27 +1,36 @@
-.ui-menubar{
-    border: 1px solid #5b6369 !important;
-    background: #1a374d  !important;
-    color: #ffffff !important;
-    font-weight: bolder !important;
-    border:0px;
-    padding:0px;
-}
-.ui-button{
-    background-color: #1a374d;  
-}
-.ui-corner-all {
-    border-radius: 0px;
-}   
-.ui-menuitem{
-    border:0px;
-    padding:5px;
-}
-.ui-menuitem-text{
-    color:white;
 
+/* AppComponent's private CSS styles */
+h1 {
+    font-size: 1.2em;
+    color: #999;
+    margin-bottom: 0;
 }
-
-.ui-menuitem-icon{
-    color:white;
-
+h2 {
+    font-size: 2em;
+    margin-top: 0;
+    padding-top: 0;
+}
+nav {
+    background-color: rgb(7, 16, 63);
+}
+nav a {
+    padding: 5px 10px;
+    text-decoration: none;
+    display: inline-block;
+    background-color: rgb(7, 16, 63);
+}
+nav a:visited, a:link {
+    color: rgb(119, 149, 163);
+}
+nav a:hover {
+    color: #1085c0;
+    background-color: rgb(236, 236, 236);
+}
+nav a.active {
+    color: #028cd1;
+}
+  :host ::ng-deep  .ui-card {
+    width: '60%' !important;
+    margin-left:'20%' !important;
+    margin-right: '20%' !important;
 }

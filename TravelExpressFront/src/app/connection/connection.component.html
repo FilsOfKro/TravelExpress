@@ -1,0 +1,36 @@
+<div class="row custom-row">
+  <div class= "col-sm-5 custom-container jumbotron" style="background-color: rgb(206, 203, 203)">
+       
+    <form class="form-horizontal">
+        <fieldset>
+        <legend>Connection</legend>
+            
+            <table>
+                <tr>
+                    <div class="form-group">
+                        <label for="departCity">Login :</label>
+                          <input id="float-input" type="text" size="30" pInputText>
+                      </div>
+                </tr>
+                <tr>
+                    <div class="form-group">
+                        <label for="arriveCity">Mot de passe :</label>         
+                        <input type="password" pPassword (ngModel)="password"/>
+                      </div>
+                </tr>
+                <tr>
+                    <div class="form-group">
+                        <p-button (onClick)="login()" label="Connection"></p-button>
+                    </div>
+                </tr>
+                <tr>
+                  <a routerLink="/login">Réinitialiser votre mot de passe</a>
+                </tr>
+                <tr>
+                  <a routerLink="/new-account">Créer votre compte</a>
+                </tr>
+              </table>
+        </fieldset>
+    </form>
+  </div>
+</div>

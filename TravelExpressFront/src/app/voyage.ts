@@ -1,7 +1,14 @@
 export interface Voyage {
-    dateDepart: String;
-    dateArrive: String;
-    lieuDepart: String;
-    lieuArrive: String;
-    locomotion: String;
+    departureIata: String;
+    departureIcao: String;
+    departureTerminal: String;
+    departureTime: String;
+    arrivalIata: String;
+    arrivalIcao: String;
+    arrivalTerminal: String;
+    arrivalTime: String;
+    airlineIata: String;
+    airlineIcao: String;
+    flightNumber: String;
+    regNumber: number;
 }
