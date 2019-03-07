@@ -51,8 +51,7 @@ public class RoutesService {
 
 	@Cacheable(value = "defaultCache")
 	public List<Route> getRoutes(RoutesRequest request) {
-		String finalUrl = apiUrl + apiPath
-				+ "?key={key}&departureIcao={departureAirportId}&arrivalIcao={departureAirportId}";
+		String finalUrl = apiUrl + apiPath + "?key={key}&departureIcao={departureAirportId}&arrivalIcao={arrivalIcao}";
 
 		log.info("About to call {} with apiKey {} and departure {} and arrival {}", finalUrl, apiKey,
 				request.getDepartureAirportId(), request.getArrivalAirportId());

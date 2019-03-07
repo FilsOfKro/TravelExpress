@@ -21,18 +21,22 @@ public class Route implements Serializable {
 	private String airlineIata;
 	private String airlineIcao;
 	private String flightNumber;
-	private String regNumber;
+	private Object regNumber;
 	private Double distance;
 
 	@JsonCreator
-	public Route(@JsonProperty("departureIata") String departureIata,
-			@JsonProperty("departureIcao") String departureIcao,
-			@JsonProperty("departureTerminal") String departureTerminal,
-			@JsonProperty("departureTime") String departureTime, @JsonProperty("arrivalIata") String arrivalIata,
-			@JsonProperty("arrivalIcao") String arrivalIcao, @JsonProperty("arrivalTerminal") String arrivalTerminal,
-			@JsonProperty("arrivalTime") String arrivalTime, @JsonProperty("airlineIata") String airlineIata,
-			@JsonProperty("airlineIcao") String airlineIcao, @JsonProperty("flightNumber") String flightNumber,
-			@JsonProperty(required = false, value = "regNumber") String regNumber) {
+	public Route(@JsonProperty(required = false, defaultValue = "", value = "departureIata") String departureIata,
+			@JsonProperty(required = false, defaultValue = "", value = "departureIcao") String departureIcao,
+			@JsonProperty(required = false, defaultValue = "", value = "departureTerminal") String departureTerminal,
+			@JsonProperty(required = false, defaultValue = "", value = "departureTime") String departureTime,
+			@JsonProperty(required = false, defaultValue = "", value = "arrivalIata") String arrivalIata,
+			@JsonProperty(required = false, defaultValue = "", value = "arrivalIcao") String arrivalIcao,
+			@JsonProperty(required = false, defaultValue = "", value = "arrivalTerminal") String arrivalTerminal,
+			@JsonProperty(required = false, defaultValue = "", value = "arrivalTime") String arrivalTime,
+			@JsonProperty(required = false, defaultValue = "", value = "airlineIata") String airlineIata,
+			@JsonProperty(required = false, defaultValue = "", value = "airlineIcao") String airlineIcao,
+			@JsonProperty(required = false, defaultValue = "", value = "flightNumber") String flightNumber,
+			@JsonProperty(required = false, defaultValue = "", value = "regNumber") Object regNumber) {
 		this.departureIata = departureIata;
 		this.departureIcao = departureIcao;
 		this.departureTerminal = departureTerminal;
@@ -91,7 +95,7 @@ public class Route implements Serializable {
 		return flightNumber;
 	}
 
-	public String getRegNumber() {
+	public Object getRegNumber() {
 		return regNumber;
 	}
 
