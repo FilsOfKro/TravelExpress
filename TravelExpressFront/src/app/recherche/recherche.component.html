@@ -1,36 +1,42 @@
 <div class="row custom-row">
-    <div class= "col-sm-5 custom-container jumbotron" style="background-color: rgb(206, 203, 203)">
-         
-      <form class="form-horizontal">
-          <fieldset>
-          <legend>Rechercher un vol</legend>
-              
-              <table>
-                  <tr>
-                      <div class="form-group">
-                          <label for="departCity">Ville de départ</label>
-                            <input id="float-input" type="text" size="30" pInputText>
+    <div class="col-sm-5 custom-container jumbotron" style="background-color: rgb(206, 203, 203)">
+
+            <fieldset>
+                <legend>Rechercher un vol</legend>
+
+                <table>
+                    <tr>
+                        <div class="form-group">
+                            <label for="departCity">Ville de départ</label>
+                            <input id="float-input" type="text" [(ngModel)]="departCity" size="30" pInputText>
                         </div>
-                  </tr>
-                  <tr>
-                      <div class="form-group">
-                          <label for="arriveCity">Ville d'arrivée</label>         
-                          <input id="float-input" type="text" size="30" pInputText>
+                    </tr>
+                    <tr>
+                        <div class="form-group">
+                            <label for="arriveCity">Ville d'arrivée</label>
+                            <input id="float-input" type="text" [(ngModel)]="arriveeCity" size="30" pInputText>
                         </div>
-                  </tr>
-                  <tr>
-                      <div class="form-group">
-                          <label for="arriveCity">Date</label>
-                          <p-calendar ></p-calendar>
+                    </tr>
+                    <tr>
+                        <div class="form-group">
+                            <label for="arriveCity">Date</label>
+                            <p-calendar></p-calendar>
                         </div>
-                  </tr>
-                  <tr>
-                      <div class="form-group">
-                          <p-button (onClick)="recherche()" label="Rechecher"></p-button>
-                      </div>
-                  </tr>
+                    </tr>
+                    <tr>
+                        <div class="form-group">
+                            <p-button (onClick)="recherche()" label="Rechecher"></p-button>
+                        </div>
+                    </tr>
                 </table>
-          </fieldset>
-      </form>
+            </fieldset>
     </div>
-  </div>
+</div>
+<div>
+    <p-dataScroller [value]="voyages" [rows]="20">
+        <ng-template let-voyages pTemplate="item">
+            <app-travel-row [voyage]="voyages"></app-travel-row>
+        </ng-template>
+    </p-dataScroller>
+
+</div>

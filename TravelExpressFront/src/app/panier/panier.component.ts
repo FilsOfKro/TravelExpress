@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Voyage } from '../voyage';
 
 @Component({
   selector: 'app-panier',
@@ -7,10 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PanierComponent implements OnInit {
   fullPrize: number;
-
+  voyages: Voyage[];
+  loadButton: any;
   constructor() { }
 
   ngOnInit() {
+
   }
 
   pay() {
