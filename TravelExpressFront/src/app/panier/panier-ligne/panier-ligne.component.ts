@@ -1,4 +1,4 @@
-import { Component, OnInit, Input} from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Voyage } from '../../voyage';
 
 @Component({
@@ -8,10 +8,14 @@ import { Voyage } from '../../voyage';
 })
 export class PanierLigneComponent implements OnInit {
 
-  @Input() voyage: Voyage[];
+  @Input() voyage: Voyage;
   constructor() { }
 
   ngOnInit() {
+  }
+
+  removeFromCart() {
+
   }
 
 }

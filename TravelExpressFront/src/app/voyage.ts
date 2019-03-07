@@ -11,4 +11,5 @@ export interface Voyage {
     airlineIcao: String;
     flightNumber: String;
     regNumber: number;
+    distance: number;
 }

@@ -25,7 +25,8 @@ export class ListAllVoyagesComponent implements OnInit {
         airlineIata: 'airlineIata',
         airlineIcao: 'airlineIcao',
         flightNumber: 'flightnumber',
-        regNumber: 5}
+        regNumber: 5,
+      distance: 55}
       ];
 
   }

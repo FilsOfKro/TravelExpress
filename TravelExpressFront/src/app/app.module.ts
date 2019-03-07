@@ -22,6 +22,9 @@ import { InputTextModule } from 'primeng/inputtext';
 import { NewAccountComponent } from './connection/newAccount/newAccount.component';
 import { PanierLigneComponent } from './panier/panier-ligne/panier-ligne.component';
 import { PasswordModule } from 'primeng/password';
+import { RechercheService } from './recherche/recherche.service';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -47,9 +50,11 @@ import { PasswordModule } from 'primeng/password';
     CardModule,
     BrowserAnimationsModule,
     InputTextModule,
-    PasswordModule
+    PasswordModule,
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [RechercheService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,4 +1,4 @@
-<p-dataScroller  [value]="voyages" [rows]="20" [loader]="loadButton">
+<p-dataScroller  [value]="voyages" [rows]="20">
   <ng-template let-voyages pTemplate="item" >
         <app-travel-row [voyage]="voyages"></app-travel-row>
   </ng-template>

@@ -7,10 +7,15 @@ import { Voyage } from '../voyage';
   styleUrls: ['./travel-row.component.css']
 })
 export class TravelRowComponent implements OnInit {
-  @Input() voyage: Voyage[];
+  @Input() voyage: Voyage;
+  showVoyage: any;
   constructor() { }
 
   ngOnInit() {
+  }
+
+  addToCart() {
+
   }
 
 }
