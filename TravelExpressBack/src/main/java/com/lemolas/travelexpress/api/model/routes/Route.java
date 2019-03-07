@@ -32,7 +32,7 @@ public class Route implements Serializable {
 			@JsonProperty("arrivalIcao") String arrivalIcao, @JsonProperty("arrivalTerminal") String arrivalTerminal,
 			@JsonProperty("arrivalTime") String arrivalTime, @JsonProperty("airlineIata") String airlineIata,
 			@JsonProperty("airlineIcao") String airlineIcao, @JsonProperty("flightNumber") String flightNumber,
-			@JsonProperty("regNumber") String regNumber) {
+			@JsonProperty(required = false, value = "regNumber") String regNumber) {
 		this.departureIata = departureIata;
 		this.departureIcao = departureIcao;
 		this.departureTerminal = departureTerminal;
