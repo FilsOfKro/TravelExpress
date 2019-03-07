@@ -38,4 +38,18 @@ public class UtilisateurController {
 		}
 
 	}
+
+	@PostMapping("/register")
+	public ResponseEntity<?> register(@Valid @RequestBody User user) {
+		Utilisateur utilisateur = new Utilisateur(user.getUsername(), user.getPassword());
+		Utilisateur saved = repository.save(utilisateur);
+
+		if ((utilisateur.getUsername().equals(saved.getUsername())
+				&& (utilisateur.getPassword().equals(saved.getPassword())))) {
+			return ResponseEntity.ok(saved);
+		} else {
+			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+		}
+
+	}
 }
