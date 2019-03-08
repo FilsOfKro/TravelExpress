@@ -6,7 +6,7 @@
         <app-panier-ligne (changeList)="changeList($event)" [voyage]="voyages"></app-panier-ligne>
       </ng-template>
     </p-dataScroller>
-    <p-message *ngIf="voyages?.length == 0" severity="warn" text="Aucun voyages n'a été ajouté au panier."></p-message>
+    <p-message *ngIf="voyages?.length == 0" severity="warn" text="Aucun voyage n'a été ajouté au panier."></p-message>
   </div>
   <div >
     <a>Prix total : {{fullPrize | number : '1.2-2'}} €</a>
