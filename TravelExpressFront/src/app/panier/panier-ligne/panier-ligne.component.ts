@@ -17,6 +17,7 @@ export class PanierLigneComponent implements OnInit {
 
     nameAirline : '',
     codeIso2Country: '',
+    sizeAirline: 0
   };
 
   constructor(private panierService: PanierService, private travelRowService: TravelRowService) { }
