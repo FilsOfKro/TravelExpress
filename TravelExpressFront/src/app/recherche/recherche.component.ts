@@ -4,6 +4,8 @@ import { RechercheService } from './recherche.service';
 import { Voyage } from '../voyage';
 import { AirportCity } from '../airportCity';
 
+const message = 'Veuillez choisir un aéroport';
+
 @Component({
   selector: 'app-recherche',
   templateUrl: './recherche.component.html',
@@ -13,8 +15,8 @@ import { AirportCity } from '../airportCity';
 export class RechercheComponent implements OnInit {
   departCity: String = '';
   arriveeCity: String = '';
-  arriveeId: String;
-  departId: String;
+  arriveeId: String = message;
+  departId: String = message;
   voyages: Voyage[];
   departureAirports: AirportCity[];
   arrivalAirports: AirportCity[];
@@ -42,9 +44,11 @@ export class RechercheComponent implements OnInit {
 
   recherche() {
       if (this.departId !== undefined && this.arriveeId !== undefined) {
-        this.rechercheService.getSearchedVoyages(this.arriveeId, this.departId ).subscribe(ret => {
-          this.voyages = ret;
-        });
+        if (this.departId !== message && this.arriveeId !== message) {
+          this.rechercheService.getSearchedVoyages(this.arriveeId, this.departId ).subscribe(ret => {
+            this.voyages = ret;
+          });
+        }
       }
     }
 }
