@@ -13,21 +13,5 @@ export class ListAllVoyagesComponent implements OnInit {
 
   ngOnInit() {
 
-    this.voyages = [
-      {departureIata: 'departueiata',
-        departureIcao: 'departureicao',
-        departureTerminal: 'departuere terminal',
-        departureTime: 'departureTime',
-        arrivalIata: 'arivalIata',
-        arrivalIcao: 'arrivalIcao',
-        arrivalTerminal: 'arrivalTerminal',
-        arrivalTime: 'arrivalTime',
-        airlineIata: 'airlineIata',
-        airlineIcao: 'airlineIcao',
-        flightNumber: 'flightnumber',
-        regNumber: 5,
-      distance: 55}
-      ];
-
   }
 }

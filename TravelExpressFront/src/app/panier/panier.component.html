@@ -1,14 +1,21 @@
-<h1>Votre panier</h1>
-<div>
-  <p-dataScroller [value]="voyages" [rows]="20" [loader]="loadButton">
-    <ng-template let-voyages pTemplate="item">
-      <app-panier-ligne [voyage]="voyages"></app-panier-ligne>
-    </ng-template>
-  </p-dataScroller>
-</div>
 <div style="background:honeydew">
-  <a>Prix total : {{fullPrize}}</a>
-  <div class="form-group">
+  <h1>Votre panier</h1>
+  <div *ngIf="voyages !== undefined">
+    <p-dataScroller [value]="voyages" [rows]="20" [loader]="loadButton">
+      <ng-template let-voyages pTemplate="item">
+        <app-panier-ligne (changeList)="doSomething($event)" [voyage]="voyages"></app-panier-ligne>
+      </ng-template>
+    </p-dataScroller>
+  </div>
+  <div *ngIf="voyages === undefined">
+    <h3>Aucun vols n'à été ajouté au panier</h3>
+  </div>
+  <div >
+    <a>Prix total : {{fullPrize}}</a>
+    <div class="form-group">
       <p-button (onClick)="pay()" label="Payer"></p-button>
+    </div>
   </div>
 </div>
+
+<p-message *ngIf="connected" severity="error" text="Vous devez être conncté pour pouvoir payer."></p-message>

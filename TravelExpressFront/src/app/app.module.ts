@@ -25,7 +25,11 @@ import { PasswordModule } from 'primeng/password';
 import { RechercheService } from './recherche/recherche.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-
+import { TravelRowService } from './travel-row/travelRow.service';
+import { PanierService } from './panier/panier.service';
+import {GrowlModule} from 'primeng/growl';
+import {MessagesModule} from 'primeng/messages';
+import {MessageModule} from 'primeng/message';
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,9 +56,16 @@ import { FormsModule } from '@angular/forms';
     InputTextModule,
     PasswordModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    GrowlModule,
+    MessageModule,
+    MessagesModule
   ],
-  providers: [RechercheService],
+  providers: [
+    RechercheService,
+    TravelRowService,
+    PanierService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

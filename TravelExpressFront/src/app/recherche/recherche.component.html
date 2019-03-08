@@ -35,7 +35,7 @@
 <div>
     <p-dataScroller [value]="voyages" [rows]="20">
         <ng-template let-voyages pTemplate="item">
-            <app-travel-row [voyage]="voyages"></app-travel-row>
+            <app-travel-row [voyage]="voyages" [depart]="departCity" [arrivee]="arriveeCity"></app-travel-row>
         </ng-template>
     </p-dataScroller>
 

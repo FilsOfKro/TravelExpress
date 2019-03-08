@@ -6,37 +6,26 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 import { Observable } from 'rxjs/Observable';
 import { Voyage } from '../voyage';
+import { Airlines } from '../airlines';
 import { AirportCity } from '../airportCity';
 import { AirportByCities } from '../airportByCities';
 const API_URL = environment.apiUrl;
 
 @Injectable()
-export class RechercheService {
+export class TravelRowService {
     constructor(private http: HttpClient) { }
 
     // API: GET /todos
-    public getAirlines(nom): Observable<Voyage[]> {
+    public getAirline(iata, icao): Observable<Airlines> {
 
         let params = new HttpParams();
+        params = params.append('codeIataAirport', iata);
+        params = params.append('codeIcaoAirport', icao);
 
-        return this.http.get(API_URL + 'routes', { params: params }).map((response) => {
-            const voyages = response;
-            console.log(voyages);
-            return voyages;
-        })
-            .catch(this.handleError);
-
-    }
-
-    public getIdCity(nom): Observable<AirportCity[]> {
-
-
-        let params = new HttpParams();
-        params = params.append('input', nom);
-        return this.http.get(API_URL + 'autocomplete', { params: params }).map((response) => {
-            const id = response;
-            console.log(id);
-            return id;
+        return this.http.get(API_URL + 'airports', { params: params }).map((response) => {
+            const airline = response;
+            console.log(airline);
+            return airline;
         })
             .catch(this.handleError);
 
