@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RechercheService } from './recherche.service';
 
 import { Voyage } from '../voyage';
+import { AirportCity } from '../airportCity';
 
 @Component({
   selector: 'app-recherche',
@@ -15,33 +16,35 @@ export class RechercheComponent implements OnInit {
   arriveeId: String;
   departId: String;
   voyages: Voyage[];
+  departureAirports: AirportCity[];
+  arrivalAirports: AirportCity[];
 
   constructor(private rechercheService: RechercheService) { }
 
   ngOnInit() {
   }
 
+  departCityChanged() {
+    if (this.departCity.length >= 3) {
+      this.rechercheService.getIdCity(this.departCity).subscribe(response => {
+        this.departureAirports = response;
+      });
+    }
+  }
+
+  arrivalCityChanged() {
+    if (this.arriveeCity.length >= 3) {
+      this.rechercheService.getIdCity(this.arriveeCity).subscribe(response => {
+        this.arrivalAirports = response;
+      });
+    }
+  }
+
   recherche() {
-
-    this.rechercheService.getIdCity(this.departCity).subscribe(response => {
-
-      this.departId = response[0].codeIcaoAirport;
-      console.log(this.departId);
-      if (this.departId !== undefined) {
-        this.rechercheService.getIdCity(this.arriveeCity).subscribe(res => {
-
-          this.arriveeId = res[0].codeIcaoAirport;
-          console.log(this.arriveeId);
-          if (this.arriveeId !== undefined) {
-            this.rechercheService.getSearchedVoyages(this.arriveeId, this.departId ).subscribe(ret => {
-
-              this.voyages = ret;
-            });
-
-          }
+      if (this.departId !== undefined && this.arriveeId !== undefined) {
+        this.rechercheService.getSearchedVoyages(this.arriveeId, this.departId ).subscribe(ret => {
+          this.voyages = ret;
         });
       }
-
-    });
-  }
+    }
 }

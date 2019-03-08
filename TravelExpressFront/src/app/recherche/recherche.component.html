@@ -6,28 +6,47 @@
 
                 <table>
                     <tr>
-                        <div class="form-group">
-                            <label for="departCity">Ville de départ</label>
-                            <input id="float-input" type="text" [(ngModel)]="departCity" size="30" pInputText>
-                            
-                        </div>
+                        <td>
+                            <div class="form-group">
+                                <label for="departCity">Ville de départ</label>
+                                <input id="float-input" type="text" [(ngModel)]="departCity" (ngModelChange)="departCityChanged()" size="30" pInputText>
+                            </div>
+                        </td>
+                        <td>
+                            <select [(ngModel)]="departId">
+                                <option>Veuillez choisir un aéroport</option>
+                                <option *ngFor="let airport of departureAirports" [ngValue]="airport.codeIcaoAirport">{{airport.nameAirport}}</option>
+                            </select>
+                        </td>
                     </tr>
                     <tr>
-                        <div class="form-group">
-                            <label for="arriveCity">Ville d'arrivée</label>
-                            <input id="float-input" type="text" [(ngModel)]="arriveeCity" size="30" pInputText>
-                        </div>
+                        <td>
+                            <div class="form-group">
+                                <label for="arriveCity">Ville d'arrivée</label>
+                                <input id="float-input" type="text" [(ngModel)]="arriveeCity" (ngModelChange)="arrivalCityChanged()" size="30" pInputText>
+                            </div>
+                        </td>
+                        <td>
+                            <select [(ngModel)]="arriveeId">
+                                <option>Veuillez choisir un aéroport</option>
+                                <option *ngFor="let airport of arrivalAirports" [ngValue]="airport.codeIcaoAirport">{{airport.nameAirport}}</option>
+                            </select>
+                        </td>
                     </tr>
                     <tr>
-                        <div class="form-group">
-                            <label for="arriveCity">Date</label>
-                            <p-calendar></p-calendar>
-                        </div>
+                        <td>
+                            <div class="form-group">
+                                <label for="arriveCity">Date</label>
+                                <p-calendar></p-calendar>
+                            </div>
+                        </td>
                     </tr>
                     <tr>
-                        <div class="form-group">
-                            <p-button (onClick)="recherche()" label="Rechecher"></p-button>
-                        </div>
+                        <td>
+                            <div class="form-group">
+                                <p-button (onClick)="recherche()" label="Rechecher"></p-button>
+                            </div>
+                        </td>
                     </tr>
                 </table>
             </fieldset>
@@ -39,6 +58,6 @@
             <app-travel-row [voyage]="voyages" [depart]="departCity" [arrivee]="arriveeCity"></app-travel-row>
         </ng-template>
     </p-dataScroller>
-    <p-message *ngIf="voyages === undefined" severity="warn" text="Aucun voyages n'a été trouvé."></p-message>
+    <p-message *ngIf="voyages === undefined" severity="warn" text="Aucun voyage n'a été trouvé."></p-message>
 
 </div>
