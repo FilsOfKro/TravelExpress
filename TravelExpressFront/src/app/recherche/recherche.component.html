@@ -1,0 +1,63 @@
+<div class="row custom-row">
+    <div class="col-sm-5 custom-container jumbotron" style="background-color: rgb(206, 203, 203)">
+
+            <fieldset>
+                <legend>Rechercher un vol</legend>
+
+                <table>
+                    <tr>
+                        <td>
+                            <div class="form-group">
+                                <label for="departCity">Ville de départ</label>
+                                <input id="float-input" type="text" [(ngModel)]="departCity" (ngModelChange)="departCityChanged()" size="30" pInputText>
+                            </div>
+                        </td>
+                        <td>
+                            <select [(ngModel)]="departId">
+                                <option>Veuillez choisir un aéroport</option>
+                                <option *ngFor="let airport of departureAirports" [ngValue]="airport.codeIcaoAirport">{{airport.nameAirport}}</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="form-group">
+                                <label for="arriveCity">Ville d'arrivée</label>
+                                <input id="float-input" type="text" [(ngModel)]="arriveeCity" (ngModelChange)="arrivalCityChanged()" size="30" pInputText>
+                            </div>
+                        </td>
+                        <td>
+                            <select [(ngModel)]="arriveeId">
+                                <option>Veuillez choisir un aéroport</option>
+                                <option *ngFor="let airport of arrivalAirports" [ngValue]="airport.codeIcaoAirport">{{airport.nameAirport}}</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="form-group">
+                                <label for="arriveCity">Date</label>
+                                <p-calendar></p-calendar>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="form-group">
+                                <p-button (onClick)="recherche()" label="Rechecher"></p-button>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+    </div>
+</div>
+<div>
+    <p-dataScroller [value]="voyages" [rows]="20">
+        <ng-template let-voyages pTemplate="item">
+            <app-travel-row [voyage]="voyages" [depart]="departCity" [arrivee]="arriveeCity"></app-travel-row>
+        </ng-template>
+    </p-dataScroller>
+    <p-message *ngIf="voyages === undefined" severity="warn" text="Aucun voyage n'a été trouvé."></p-message>
+
+</div>

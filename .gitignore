@@ -200,3 +200,9 @@ webpack-cache
 *.shim.ngstyle.ts
 
 /.gradle/**
+
+TravelExpressBack/\.gradle/
+
+TravelExpressBack/build/
+
+TravelExpressBack/bin/

@@ -1,29 +1,6 @@
-<p-dataScroller [value]="voyages" [rows]="10" [inline]="true" scrollHeight="500px">
-  <p-header>
-      Descendre pour en charger plus
-  </p-header>
+<p-dataScroller  [value]="voyages" [rows]="20">
   <ng-template let-voyages pTemplate="item" >
-      <div class="ui-g ">
-          <div class="ui-g-12 ui-md-3">
-              <img src="assets/tuktuk2000.jpg">
-          </div>
-          <div class="ui-g-12 ui-md-9">
-              <div class="ui-g">
-                  <div class="ui-g-2 ui-sm-6">Départ: </div>
-                  <div class="ui-g-10 ui-sm-6">{{voyages.dateDepart}}</div>
-                  <div class="ui-g-10 ui-sm-6">{{voyages.lieuDepart}}</div>
-
-
-                  <div class="ui-g-2 ui-sm-6">Arrivée: </div>
-                  <div class="ui-g-10 ui-sm-6">{{voyages.dateArrive}}</div>
-                  <div class="ui-g-10 ui-sm-6">{{voyages.lieuArrive}}</div>
-
-                  <div class="ui-g-2 ui-sm-6">Moyen de locomotion: </div>
-                  <div class="ui-g-10 ui-sm-6">{{voyages.locomotion}}</div>
-
-              </div>
-          </div>
-      </div>
-      
+        <app-travel-row [voyage]="voyages"></app-travel-row>
   </ng-template>
-</p-dataScroller>
+</p-dataScroller >
+

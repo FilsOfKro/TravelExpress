@@ -1,0 +1,19 @@
+<div style="background:honeydew">
+  <h1>Votre panier</h1>
+  <div *ngIf="voyages !== undefined">
+    <p-dataScroller [value]="voyages" [rows]="20" [loader]="loadButton">
+      <ng-template let-voyages pTemplate="item">
+        <app-panier-ligne (changeList)="changeList($event)" [voyage]="voyages"></app-panier-ligne>
+      </ng-template>
+    </p-dataScroller>
+    <p-message *ngIf="voyages?.length == 0" severity="warn" text="Aucun voyage n'a été ajouté au panier."></p-message>
+  </div>
+  <div >
+    <a>Prix total : {{fullPrize | number : '1.2-2'}} €</a>
+    <div class="form-group">
+      <p-button (onClick)="pay()" label="Payer"></p-button>
+    </div>
+  </div>
+</div>
+
+<p-message *ngIf="!connected" severity="error" text="Vous devez être connecté pour pouvoir payer."></p-message>

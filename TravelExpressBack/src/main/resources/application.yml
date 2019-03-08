@@ -1,0 +1,32 @@
+travelexpress:
+   db:
+      host: www.pantry.ovh
+      port: 3306
+      name: TravelExpress
+   flight:
+     api:
+       url: https://aviation-edge.com/v2/public/
+       key: 3c4a52-3bf6e9
+       
+spring:
+  profiles:
+    active: DEV
+  datasource:
+    url: jdbc:mariadb://${travelexpress.db.host}:${travelexpress.db.port}/${travelexpress.db.name}
+    username: back
+    password: fast
+    driver-class-name: org.mariadb.jdbc.Driver
+  jpa:
+    hibernate:
+      show_sql: true
+      naming:
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      use-new-id-generator-mappings: false
+    open-in-view: false
+
+hibernate:
+  cache:
+    use_second_level_cache: true
+    region:
+      factory_class: org.hibernate.cache.ehcache.EhCacheRegionFactory
