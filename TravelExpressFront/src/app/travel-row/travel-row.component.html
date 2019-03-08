@@ -1,34 +1,28 @@
 <div class="ui-g ">
-          
-    
-    <div class="ui-g-12 ui-md-9">
 
-        <div class="ui-g">
-            <table>
-              <tr>
-                <th>Départ : </th>
-                <th>Arrivée : </th>
-                <th>Detail du vol : </th>
-              </tr>
-              <tr>
-                  <td>{{voyage.departureIcao}}</td>
-                  <td>{{voyage.arrivalIcao}}</td>
-                  <td>{{voyage.airlineIcao}}</td>
-              </tr>
-              <tr>
-                <td>{{voyage.departureTime}}</td>
-                <td>{{voyage.arrivalTime}}</td>
-                <td>{{voyage.flightNumber}}</td>
-              </tr>
-              <tr>
-                <td>
-                    <div class="form-group">
-                        <p-button (onClick)="addToCart()" label="Ajouter au panier"></p-button>
-                    </div>
-                </td>
-              </tr>
-            </table>
 
-        </div>
-    </div>
+  <div>
+    <b>Départ : </b><br />
+    <a>Aeroport de départ : {{voyage.departureIcao}}</a><br />
+    <a>Heure de départ : {{voyage.departureTime}}</a><br /><br />
+
+    <b>Arrivée : </b><br />
+    <a>Aeroport de d'arrivé : {{voyage.arrivalIcao}}</a><br />
+    <a>Heure d'arrivée : {{voyage.arrivalTime}}</a><br /><br />
+
+    <b>Detail du vol : </b><br />
+    <a>Distance : {{voyage.distance}}</a><br/>
+    <a>Prix : {{voyage.prix}}</a><br/>
+    <a>Code de la companie de vol : {{voyage.airlineIcao}}</a><br />
+    <a>Numéro de vol : {{voyage.flightNumber}}</a><br /><br />
+    <a>Companie de vol : {{airline.nameAirline}}</a><br />
+    <a>Pays : {{airline.codeIso2Country}}</a><br/>
+
+  </div>
+
+
+  <div class="form-group">
+    <p-button (onClick)="addToCart()" label="Ajouter au panier"></p-button>
+  </div>
+
 </div>

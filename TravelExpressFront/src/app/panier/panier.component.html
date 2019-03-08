@@ -3,7 +3,7 @@
   <div *ngIf="voyages !== undefined">
     <p-dataScroller [value]="voyages" [rows]="20" [loader]="loadButton">
       <ng-template let-voyages pTemplate="item">
-        <app-panier-ligne (changeList)="doSomething($event)" [voyage]="voyages"></app-panier-ligne>
+        <app-panier-ligne (changeList)="changeList($event)" [voyage]="voyages"></app-panier-ligne>
       </ng-template>
     </p-dataScroller>
   </div>

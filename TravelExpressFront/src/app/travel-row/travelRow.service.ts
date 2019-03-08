@@ -16,13 +16,12 @@ export class TravelRowService {
     constructor(private http: HttpClient) { }
 
     // API: GET /todos
-    public getAirline(iata, icao): Observable<Airlines> {
+    public getAirline(iata): Observable<Airlines> {
 
         let params = new HttpParams();
-        params = params.append('codeIataAirport', iata);
-        params = params.append('codeIcaoAirport', icao);
+        params = params.append('codeIataAirline', iata);
 
-        return this.http.get(API_URL + 'airports', { params: params }).map((response) => {
+        return this.http.get(API_URL + 'airline', { params: params }).map((response) => {
             const airline = response;
             console.log(airline);
             return airline;

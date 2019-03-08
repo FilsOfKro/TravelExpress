@@ -28,10 +28,12 @@ export class PanierComponent implements OnInit {
     }
     this.voyages = JSON.parse(localStorage.getItem('panier'));
     this.fullPrize = 0;
-    for (let i = 0; i < this.voyages.length; i++) {
-      this.fullPrize = this.fullPrize + this.voyages[i].prix;
+    if (this.voyages !== null) {
+      for (let i = 0; i < this.voyages.length; i++) {
+        this.fullPrize = this.fullPrize + this.voyages[i].prix;
+      }
+      console.log(this.voyages);
     }
-    console.log(this.voyages);
   }
 
   public changeList() {
