@@ -1,4 +1,4 @@
-<div class="ui-g ">
+<div class="ui-g "  style="border:1px solid grey">
 
 
   <div>
@@ -11,8 +11,8 @@
     <a>Heure d'arrivée : {{voyage.arrivalTime}}</a><br /><br />
 
     <b>Detail du vol : </b><br />
-    <a>Distance : {{voyage.distance}}</a><br/>
-    <a>Prix : {{voyage.prix}}</a><br/>
+    <a>Distance : {{voyage.distance | number : '1.2-2'}} km</a><br/>
+    <a>Prix : {{voyage.prix | number : '1.2-2'}} €</a><br/>
     <a>Code de la companie de vol : {{voyage.airlineIcao}}</a><br />
     <a>Numéro de vol : {{voyage.flightNumber}}</a><br /><br />
     <a>Companie de vol : {{airline.nameAirline}}</a><br />

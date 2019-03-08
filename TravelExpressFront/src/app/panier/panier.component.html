@@ -7,15 +7,15 @@
       </ng-template>
     </p-dataScroller>
   </div>
-  <div *ngIf="voyages === undefined">
+  <div *ngIf="voyages === []">
     <h3>Aucun vols n'à été ajouté au panier</h3>
   </div>
   <div >
-    <a>Prix total : {{fullPrize}}</a>
+    <a>Prix total : {{fullPrize | number : '1.2-2'}} €</a>
     <div class="form-group">
       <p-button (onClick)="pay()" label="Payer"></p-button>
     </div>
   </div>
 </div>
 
-<p-message *ngIf="connected" severity="error" text="Vous devez être conncté pour pouvoir payer."></p-message>
+<p-message *ngIf="!connected" severity="error" text="Vous devez être connecté pour pouvoir payer."></p-message>

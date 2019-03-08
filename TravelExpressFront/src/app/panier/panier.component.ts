@@ -21,7 +21,9 @@ export class PanierComponent implements OnInit {
     private panierService: PanierService, private travelRowService: TravelRowService) { }
 
   ngOnInit() {
-    if (localStorage.getItem('connecte') === 'true') {
+    console.log(localStorage.getItem('connecte'));
+    if (localStorage.getItem('connecte').match('true')) {
+      console.log('connecte');
       this.connected = true;
     } else {
       this.connected = false;
