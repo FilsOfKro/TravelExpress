@@ -204,3 +204,5 @@ webpack-cache
 TravelExpressBack/\.gradle/
 
 TravelExpressBack/build/
+
+TravelExpressBack/bin/

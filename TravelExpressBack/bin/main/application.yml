@@ -6,7 +6,11 @@ travelexpress:
    flight:
      api:
        url: https://aviation-edge.com/v2/public/
+<<<<<<< Updated upstream
        key: 67cc97-523d9e
+=======
+       key: 3c4a52-3bf6e9
+>>>>>>> Stashed changes
        
 spring:
   profiles:
