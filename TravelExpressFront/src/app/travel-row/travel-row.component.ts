@@ -20,9 +20,11 @@ export class TravelRowComponent implements OnInit {
   constructor(private travelRowService: TravelRowService, private panierService: PanierService) { }
 
   ngOnInit() {
-    this.travelRowService.getAirline(this.voyage.departureIata, this.voyage.departureIcao).subscribe(response => {
+    this.travelRowService.getAirline(this.voyage.airlineIata).subscribe(response => {
       this.airline = response;
     });
+    this.voyage.departureIcao = this.depart;
+    this.voyage.arrivalIcao = this.arrivee;
     this.voyage.prix = this.voyage.distance / 2;
 
   }

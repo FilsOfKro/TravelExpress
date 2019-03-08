@@ -24,7 +24,7 @@ export class ConnectionService {
         params = params.append('username', nom);
         params = params.append('password', mdp);
 
-        return this.http.post(API_URL + 'authentification/register', { params: params }).map((response) => {
+        return this.http.post(API_URL + 'authentication/register', {'username': nom, 'password': mdp}).map((response) => {
             const user = response;
             console.log(user);
             this.connected = true;
@@ -34,13 +34,14 @@ export class ConnectionService {
 
     }
 
-    public getConnect(nom, mdp): Observable<User> {
-
+    public getConnect(namae, mdp): Observable<User> {
+        console.log('nom', namae);
+        console.log('mdp', mdp);
         let params = new HttpParams();
-        params = params.append('username', nom);
+        params = params.append('username', namae);
         params = params.append('password', mdp);
 
-        return this.http.post(API_URL + 'authentification', { params: params }).map((response) => {
+        return this.http.post(API_URL + 'authentication', {'username': namae, 'password': mdp}).map((response) => {
             const user = response;
             this.connected = true;
             console.log(user);
