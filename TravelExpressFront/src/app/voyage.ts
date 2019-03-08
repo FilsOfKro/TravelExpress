@@ -12,4 +12,5 @@ export interface Voyage {
     flightNumber: String;
     regNumber: number;
     distance: number;
+    prix: number;
 }
