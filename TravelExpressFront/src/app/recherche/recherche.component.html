@@ -39,5 +39,6 @@
             <app-travel-row [voyage]="voyages" [depart]="departCity" [arrivee]="arriveeCity"></app-travel-row>
         </ng-template>
     </p-dataScroller>
+    <p-message *ngIf="voyages === undefined" severity="warn" text="Aucun voyages n'a été trouvé."></p-message>
 
 </div>

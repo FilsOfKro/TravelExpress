@@ -23,7 +23,6 @@ export class PanierComponent implements OnInit {
   ngOnInit() {
     console.log(localStorage.getItem('connecte'));
     if (localStorage.getItem('connecte').match('true')) {
-      console.log('connecte');
       this.connected = true;
     } else {
       this.connected = false;
