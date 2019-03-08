@@ -1,4 +1,4 @@
-<div class="row custom-row">
+<div *ngIf="!connected" class="row custom-row">
   <div class= "col-sm-5 custom-container jumbotron" style="background-color: rgb(206, 203, 203)">
        
     <form class="form-horizontal">
@@ -9,13 +9,13 @@
                 <tr>
                     <div class="form-group">
                         <label for="departCity">Login :</label>
-                          <input id="float-input" type="text" size="30" pInputText>
+                          <input id="float-input" type="text" size="30" pInputText [(ngModel)]="log" name="log">
                       </div>
                 </tr>
                 <tr>
                     <div class="form-group">
                         <label for="arriveCity">Mot de passe :</label>         
-                        <input type="password" pPassword (ngModel)="password"/>
+                        <input type="password" pPassword [(ngModel)]="password" name="password"/>
                       </div>
                 </tr>
                 <tr>
@@ -25,6 +25,25 @@
                 </tr>
                 <tr>
                   <a routerLink="/new-account">Créer votre compte</a>
+                </tr>
+              </table>
+        </fieldset>
+    </form>
+  </div>
+</div>
+<div *ngIf="connected">
+  <div class= "col-sm-5 custom-container jumbotron" style="background-color: rgb(206, 203, 203)">
+       
+    <form class="form-horizontal">
+        <fieldset>
+        <legend>Vous êtes connecté.</legend>
+            
+            <table>
+               
+                <tr>
+                    <div class="form-group">
+                        <p-button (onClick)="disconnect()" label="Déconnection"></p-button>
+                    </div>
                 </tr>
               </table>
         </fieldset>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ConnectionService } from './connection.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-connection',
@@ -9,14 +10,33 @@ import { ConnectionService } from './connection.service';
 })
 export class ConnectionComponent implements OnInit {
   password: String;
-  constructor(private connectionService: ConnectionService) { }
+  log: String;
+  connected: boolean;
+  constructor(private connectionService: ConnectionService, private router: Router) { }
 
   ngOnInit() {
+    if (localStorage.getItem('connecte') === 'true') {
+      this.connected = true;
+    } else {
+      this.connected = false;
+    }
   }
+
   login() {
     // connection de l'user à l'appli
-    this.connectionService.getCreateAccount(this.login, this.password).subscribe(response => {
+    this.connectionService.getConnect(this.log, this.password).subscribe(response => {
       console.log('vous etes connecté');
     });
+    if (localStorage.getItem('connecte') === 'true') {
+      this.connected = true;
+    } else {
+      this.connected = false;
+    }
+    this.router.navigate(['/search']);
+  }
+
+  disconnect(){
+    localStorage.setItem('connecte', 'false');
+    this.connected = false;
   }
 }

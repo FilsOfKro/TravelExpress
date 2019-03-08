@@ -13,19 +13,27 @@ import { Airlines } from '../../airlines';
 export class PanierLigneComponent implements OnInit {
   @Input() voyage: Voyage;
   @Output() majListPanier: EventEmitter<any> = new EventEmitter<any>();
-  airline: Airlines;
+  airline: Airlines = {
+
+    nameAirline : '',
+    codeIso2Country: '',
+  };
 
   constructor(private panierService: PanierService, private travelRowService: TravelRowService) { }
 
   ngOnInit() {
+    console.log(this.airline);
+    console.log('iata airport', this.voyage.airlineIata);
 
-    this.travelRowService.getAirline(this.voyage.departureIata, this.voyage.departureIcao).subscribe(response => {
+    this.travelRowService.getAirline(this.voyage.airlineIata).subscribe(response => {
+      console.log('iata airport', this.voyage.airlineIata);
       this.airline = response;
     });
   }
 
   removeFromCart() {
     this.panierService.removeVoyage(this.voyage);
+    this.majListPanier.emit('maj');
   }
 
 }
