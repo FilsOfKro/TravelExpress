@@ -3,7 +3,7 @@
 ## Technologies : 
 
   - Serveur : Raspberry PI
-  - Database : MongoDB
-  - Front end : Angular 6 + PrimeNG
+  - Database : MariaDB
+  - Front end : Angular 5 + PrimeNG
   - Back end : Springboot 2.1.1 + Gradle
-  - Cache : Redis ?
+  - Cache : Ehcache
